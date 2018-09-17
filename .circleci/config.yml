@@ -28,6 +28,7 @@ workflows:
       - simple-job1
         
       - simple-job2:
+          type: approval
           requires: 
             - simple-job1
             
