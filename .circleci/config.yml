@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  simple-job1:
     docker:
       - image: circleci/openjdk:8-jdk
     working_directory: ~/dmp
@@ -10,5 +10,25 @@ jobs:
           command: |
             echo "this is my first build"
             mvn clean install -Dmaven.test.skip=true
+            
+            
+  simple-job2:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - checkout
+      - run: 
+          command: |
+            echo "this is my first build"
+            mvn clean install -Dmaven.test.skip=true
+            
+ 
+workflows:
+  version: 2
+  cms-workflow:
+    jobs:
+      - simple-job1
+      - simple-job2
+    
             
         
