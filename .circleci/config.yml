@@ -1,11 +1,10 @@
 version: 2
-  jobs:
-    - build:
-        docker:
-          - image: circleci/openjdk:8-jdk
-        working_directory: ~/dmp
-      
-        steps:
-          - checkout
-          - run: echo "this is my first build
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    working_directory: ~/dmp
+    steps:
+      - checkout
+      - run: echo "this is my first build
         
