@@ -8,9 +8,8 @@ jobs:
       - checkout
       - run: 
           command: |
-            echo "this is my first build"
-            mvn clean install -Dmaven.test.skip=true
-            
+            echo "this is my first job"
+           
             
   simple-job2:
     docker:
@@ -19,8 +18,7 @@ jobs:
       - checkout
       - run: 
           command: |
-            echo "this is my first build"
-            mvn clean install -Dmaven.test.skip=true
+            echo "this is my second job"
             
  
 workflows:
