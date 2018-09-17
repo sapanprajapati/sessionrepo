@@ -28,7 +28,9 @@ workflows:
   cms-workflow:
     jobs:
       - simple-job1
-      - simple-job2
-    
+        
+      - simple-job2:
+          requires: 
+            - simple-job1
             
         
