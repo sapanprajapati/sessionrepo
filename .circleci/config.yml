@@ -30,10 +30,12 @@ workflows:
   cms-workflow:
     jobs:
       - simple-job1
-        
-      - simple-job2:
+      - wait-for-job2:  
           type: approval
+          requires:
+            - simple-job1 
+      - simple-job2:
           requires: 
-            - simple-job1
+            - wait-for-job2
             
         
