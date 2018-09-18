@@ -1,9 +1,14 @@
 version: 2
+
+dockerimage: &dockerimage
+  docker:
+      - image: circleci/openjdk:8-jdk
+  working_directory: ~/dmp
+
 jobs:
   simple-job1:
-    docker:
-      - image: circleci/openjdk:8-jdk
-    working_directory: ~/dmp
+    <<: *dockerimage
+    
     steps:
       - checkout
       - run: 
@@ -12,8 +17,7 @@ jobs:
            
             
   simple-job2:
-    docker:
-      - image: circleci/openjdk:8-jdk
+    <<: *dockerimage
     steps:
       - checkout
       - run: 
