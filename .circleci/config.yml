@@ -37,5 +37,3 @@ workflows:
       - simple-job2:
           requires: 
             - wait-for-job2
-            
-        
